@@ -1,0 +1,19 @@
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    URL url = null;
+                    url = new URL("http://gtfs.halifax.ca/realtime/Vehicle/VehiclePositions.pb");
+                    GtfsRealtime.FeedMessage feed = GtfsRealtime.FeedMessage.parseFrom(url.openStream());
+                    for (GtfsRealtime.FeedEntity entity : feed.getEntityList()) {
+                        if (entity.hasTripUpdate()) {
+                            System.out.println(entity.getTripUpdate());
+                        }
+                    }
+                } catch (Exception e) {
+                    Log.d(TAG, "Exception: " + e);
+                    e.printStackTrace();
+                }
+            }
+        });
+//        thread.start();

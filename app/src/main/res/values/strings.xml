@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Halifax Transit</string>
+    <string name="title_activity_maps">Haliport</string>
+    <string name="title_location_permission">Location permission is required</string>
+    <string name="text_location_permission">Location permission is essential for the app to work</string>
+    <string name="label_ok">Ok</string>
+</resources>
